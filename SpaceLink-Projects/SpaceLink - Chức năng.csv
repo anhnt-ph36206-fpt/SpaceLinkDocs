@@ -1,0 +1,305 @@
+A,B,C,D,,,,,,,,,E,F,G,H,I,J
+STT,Phần,Tên chức năng,Mô tả,Thành viên chỉnh sửa các chức năng,T.Anh,Hiệp,Huy,Đan,Hùng,Đoàn,Mạnh,Mức độ,Đầu vào và điều kiện,Đầu ra mong đợi,Phân tích CHI TIÊT luồng chức năng chính,Luồng phụ,Lưu ý
+1,Client,Đăng nhập hệ thống,"- Chức năng cho phép người dùng (khách hàng hoặc quản trị viên) :
+ + Đăng nhập vào hệ thống bằng tài khoản đã đăng ký trước đó để truy cập các tính năng phù hợp với vai trò.
+",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE, Yêu cầu bắt buộc,"- email/ username (string, required, email)
+- password (string, required, minLength: 6)","Thông báo Thất bại (Sai tài khoản, Sai mật khẩu, Tài khoản bị khóa, ...)
+Thông báo Thành công (Chuyển về trang chủ hoặc Trang quản trị viên nếu là Admin; session hoặc token được tạo)","1. Người dùng truy cập trang đăng nhập
+2. Nhập email và mật khẩu
+3. Nhấn nút “Đăng nhập”
+4. Hệ thống kiểm tra thông tin đầu vào (không được rỗng, đúng định dạng)
+5. Hệ thống truy vấn CSDL để kiểm tra tài khoản theo email
+6. Nếu tài khoản tồn tại, kiểm tra mật khẩu (so sánh với mật khẩu đã mã hóa)
+7. Kiểm tra trạng thái tài khoản (active hay bị khóa)
+8. Nếu hợp lệ → tạo session hoặc JWT token, lưu thông tin đăng nhập
+9. Chuyển hướng người dùng về trang phù hợp với vai trò (user → trang chủ, admin → dashboard)
+10. Hiển thị thông báo đăng nhập thành công","3a. Bỏ trống email/mật khẩu: Hiển thị thông báo yêu cầu nhập đầy đủ
+3b. Sai định dạng email: Hiển thị thông báo “Email không hợp lệ”
+3. Tài khoản không tồn tại: Hiển thị thông báo “Tài khoản không tồn tại”
+4. Mật khẩu sai: Hiển thị thông báo “Email hoặc mật khẩu không đúng”
+5. Tài khoản bị khóa: Hiển thị thông báo “Tài khoản của bạn đã bị khóa”
+6. Lỗi hệ thống: Hiển thị “Đã xảy ra lỗi. Vui lòng thử lại sau.”",
+2,,"Đăng ký, đăng nhập","- Đăng ký tài khoản:
+ + Đăng ký bằng tài khoản và mật khẩu
+
+- Đăng nhập bằng tài khoản đã đăng ký::
+ + Đăng nhập bằng tài khoản và mật khẩu",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+3,,,"- Đăng ký tài khoản:
+ + Đăng ký bằng email hoặc số điện thoại
+
+- Đăng nhập tài khoản đã đăng ký:
+ + Đăng nhập bằng email hoặc SĐT
+ + Đăng nhập bằng bên thứ ba (Facebook, Zalo,.Google,...)",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Có thể làm,,,,,
+4,,Quản lý thông tin,"- Xem thông tin chi tiết tài khoản
+- Cập nhật thông tin tài khoản:
+ + Thay đổi Họ Tên
+ + Thay đổi Email
+ + Thay đổi Số Điện Thoại
+ + Thay đổi Giới Tính
+ + Thay đổi Mật Khẩu
+ + Thay đổi Hình Đại Diện (Avatar)",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+5,,Trang chủ,"- Danh Mục Sản Phẩm 
+- Sản Phẩm bán chạy
+- Sản Phẩm gợi ý.
+- Sản Phẩm mới nhất.
+- Sản Phẩm giảm giá
+- Sản Phẩm có nhiều  lượt xem (lượt truy cập)
+- Top 5 Sản Phẩm được yêu thích nhất",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+6,,Sản phẩm,"- Danh sách sản phẩm (Gồm có phân trang, bộ lọc, tìm kiếm,...)
+ + Sắp xếp theo giá lượt xem, lượt mua, lượt đánh giá, hãng, giá tiền, ... *
+ + Bộ lọc sản phẩm",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+7,,,- Danh sách Sản Phẩm yêu thích,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+8,,"Tin tức, Liên hệ"," - Danh sách Tin Tức
+- Chi tiết Tin Tức
+
+- Thông tin liên hệ (Liên hệ qua Facebook, Zalo)
+- Gửi thông tin liên hệ của mình cho cửa hàng.",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+9,,Chi tiết sản phẩm,"- Hiển thị thông tin chi tiết sản phẩm (tên, mô tả, giá bán, tồn kho, thông tin biến thể,...)
+- Add cart: (số lượng mua <= số lượng tồn kho của biến thể)
+- Mua ngay",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+10,,Bình luận,"- Hiển thị bình luận tại trang chi tiết sản phẩm
+
+- Bình luận sản phẩm
+
+- Báo cáo bình luận *
+- Ẩn bình luận *
+- Dịch bình luận *",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+11,,Đánh giá,"- Hiển thị danh sách đánh giá sản phẩm
+- Đánh giá sản phẩm tại trang chi tiết sản phẩm *
+- Thêm đánh giá
+- Ẩn đánh giá",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+12,,Quản lý giỏ hàng,"- Danh sách sản phẩm 
+ + Bao gồm: Tên sản phẩm, thông tin biến thể, số lượng, đơn giá, thành tiền,...
+
+ + Cập nhật số lượng sản phẩm trong giỏ *
+ + Validate số lượng sản phẩm còn lại trong Kho*
+- Tăng giảm số lượng (cần validate số lượng tồn của sản phẩm)
+- Xóa sản phẩm (xóa 1 hoặc xóa nhiều)
+-  Chọn sản phẩm để thanh toán (Tính tổng tiền)
+- Click tên sản phẩm -> Chi tiết sản phẩm
+
+- Áp dụng voucher cho sản phẩm trong giỏ hàng *
+- Tính được tổng tiền của đơn hàng trong giỏ hàng *
+- Gửi email hoặc mess sau khi đặt hàng thành công",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+13,,Thanh toán,"- Kiểm tra thỏa mãn số lượng mua của các sản phẩm <= số lượng tồn kho
+
+- Thông tin (địa chỉ, số điện thoại, email): 
+ + Fill sẵn theo thông tin của account, nhập mới
+ + Khi đặt hàng, người dùng chọn địa chỉ có sẵn để fill ra thay vì nhập tay*
+
+- Thanh toán online(VNPAY, MOMO)
+- Thanh toán COD
+- Thêm mã giảm giá (Nơi xuất hiện mã giảm giá)
+- Trừ số lượng trong kho hàng nếu đặt hàng thành công !
+
+- Thanh toán thành công: 
+ + Loại bỏ sản phẩm đã thanh toán trong giỏ hàng, 
+ + Gửi mail thông báo đơn hàng thanh toán thành công
+
+- Thanh toán thất bại: 
+ + Giữ nguyên sản phẩm trong giỏ hàng",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+14,,,- Không cần đăng nhập vẫn có thể thanh toán,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+15,,,- Điểm thưởng đơn hàng *,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+16,,Lịch sử đơn hàng,"- Danh sách đơn hàng đã mua (lọc theo tab các trạng thái đơn hàng)
+- Thông tin hiển thị chính:
+ + Mã đơn hàng, ngày đặt, tổng tiền, trạng thái đơn hàng, trạng thái thanh toán, trạng thái hoàn hàng,...)
+
+
+- Nếu có tài khoản:*
+ + Lưu lịch sử đơn hàng theo User để hiển thị ra
+
+- Nếu không có tài khoản: *
+(Hoặc không bắt buộc đăng nhập để mua hàng)
+ + Thực hiện tra cứu thông qua mã đơn hàng",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+17,,Chi tiết đơn hàng,"- Thông tin chung:
+ + Mã đơn hàng, ngày đặt, địa chỉ, email, số điện thoại, các trạng thái
+
+- Thông tin chi tiết sản phẩm trong đơn hàng:
+ + Tên sản phẩm, thông tin biến thể, đơn giá, số lượng, thành tiền)
+
+- Thông tin giảm giá
+- Tổng tiền
+- Hủy đơn hàng: 
+ + ĐK Hủy đơn hàng (cần kiểm tra ở backend)); 
+ + Nếu đã thanh toán online thì tiền về đâu ?) 
+ +Tiền hoàn trả về ví cá nhân online
+
+- Lịch sử thanh đổi trạng thái đơn hàng
+- Xem được tình trạng đơn hàng",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+18,,,- Hoàn hàng,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+19,,Đánh giá sản phẩm,"- Chỉ đánh giá khi đơn hàng đã được giao thành công
+- Đánh giá từng sản phẩm trong đơn hàng
+
+- Tự động đánh giá sau khi đặt hàng thành công (cmt và rating sản phẩm)*
+- Tự động check nếu trong đánh giá có link, từ ngữ cấm thì không cho submit*",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+20,Admin,Thống kê,"- Thống kê những biểu đổ có kết quả ý nghĩa:
+ + Doanh thu
+ + Sản phẩm, Danh mục bán chạy
+ + Top người mua hàng
+ + Sản phẩm tồn kho
+ + Đơn hàng gần đây (chờ xác nhận)
+ + Tỉ lệ đơn hàng
+.....
+ + Bộ lọc thời gian
+ + Có thể chuyển hướng khi click (sản phẩm, danh mục, đơn hàng, user,...)
+
+
+
+
+- Xuất danh sách đơn hàng ra Excel*
+- Lọc theo trạng thái đơn hàng*
+- Lọc theo khoảng thời gian*
+- Lọc theo số điện thoại, email*
+
+- Thống kê doanh thu theo ngày, tháng hoặc 1 khoảng thời gian bất kỳ*
+- Thống kê 5 hoặc 10 user đặt hàng nhiều nhất trong 1 khoảng thời gian bất kỳ *
+- Thống kê 5 hoặc 10 sản phẩm bán chạy nhất trong 1 khoảng thời gian bất kỳ*
+- Thống kê đơn hàng theo khoảng thời gian*
+- Thống kê tỉ lệ thành công của đơn hàng(đơn thành công/đơn đặt)*",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+21,,Quản lý Danh mục,"- Ở tất cả các chức năng quản lý sử dụng chức năng xóa mềm
+- Có thể xóa cứng nếu đảm bảo không mất mát dữ liệu tại các bảng quan hệ, gây lỗi hoặc chết hệ thống
+- Test validate tại backend và frontend:
+ + Không để trống
+ + Min, max
+ + Ngày tháng (bắt đầu kết thúc)
+ + Kiểu dữ liệu
+....
+- Danh mục:
++ Không cho xóa nếu đang còn tồn tại sản phẩm
+
+
+
+- Xây dựng chức năng Quản Lý Danh Mục:*
+- Thêm mới danh mục
+- Cập nhật danh mục
+- Ẩn danh mục
+- Tìm kiếm danh mục
+- Filter danh mục",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+22,,Quản lý Sản phẩm,"- Khi xóa mềm:
+ + Không hiển thị tại những nơi có liên quan (Danh sách sản phẩm, Thống kê,...)
+ + Dữ liệu sản phẩm trong đơn hàng vẫn toàn vẹn
+
+
+
+- Xây dựng được chức năng quản lý sản phẩm:*
+ + Xem chi tiết sản phẩm
+ + Thêm mới sản phẩm
+ + Cập nhật sản phẩm
+ + Hard delete/soft delete sản phẩm
+ + Tìm kiếm sản phẩm
+ + Filter sản phẩm 
+ + Xem đánh giá sản phẩm
++ Ẩn đánh giá",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+23,,Quản lý Biến thể sản phẩm,"- Quản lý biến thể sản phẩm động (Có thể thêm mới biến thể)
+ + Không xóa mềm
+ + Xóa nếu không có ràng buộc sản phẩm",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+24,,Quản lý Đơn hàng,"- Ngoài việc có khóa ngoại đến sản phẩm, tạo bản sao thông tin sản phẩm (tên,giá bán, thông tin biến thể,... )
+
+- Xác định các trạng thái đơn hàng:
+ + Chờ xác nhận
+ + Xác nhận
+ + Đang giao hàng
+ + Đã giao hàng
+ + Hoàn thành
+ + Hủy
+ + Hoàn hàng
+
+- Trạng thái thanh toán:
+ + Đã thanh toán
+ + Chưa thanh toán (tự động chuyển trạng thái khi Đơn hàng(hoàn thành))
+
+- Hiển thị chi tiết đơn hàng:
+ + Thông tin chung đơn hàng
+ + Thông tin sản phẩm, giảm giá, tổng tiền,...
+
+- Có thể thay đổi trạng thái đơn hàng tại danh sách và chi tiết đơn hàng 
+(không thể quay lại trạng thái cũ, cần xác nhận trước khi chuyển trạng thái)
+
+- Chuyển trang chi tiết sản phẩm khi click sản phẩm
+- Chuyển trạng thái gửi email",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+25,,,"- Trạng thái hoàn hàng:
+ + Yêu cầu hoàn hàng
+ + Chấp nhận hoàn hàng
+ + Từ chối hoàn hàng
+
+- Trạng thái thanh toán:
+ + Chưa hoàn tiền
+ + Đã hoàn tiền
+
+- Hoàn số lượng vào kho hàng
+
+
+- Thông báo khi có đơn hàng mới*
+- Hiển thị được toàn bộ đơn hàng*
+- Hiển thị chi tiết của một đơn hàng*
+- Ghi nhận và cập nhật trạng thái đơn hàng*",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+26,,Quản lý Voucher,"- Vouncher có loại: 
+ + Giảm cố định
+ + Giảm %
+- Giá trị đơn hàng tối thiểu
+- Giá trị giảm giá tối đa
+- Ngày bắt đầu, kết thúc,
+- Số lượng",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+27,,Quản lý Bình luận,"- Chuyển trạng thái bình luận (Ẩn - Hiện) 
+- Ẩn ở Admin thì ngoài Client cũng vậy",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+28,,Quản lý Banner,"- Thêm Banner
+- Xoá Banner
+- Sửa Banner 
+
+
+CRUD Banner cho Client",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Có thể làm,,,,,
+29,,Quản lý Tin tức,"- Thêm Tin Tức
+- Xoá Tin Tức
+- Sửa Tin Tức
+- Ẩn Tin Tức",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Có thể làm,,,,,
+30,,Quản lý Sự kiện,"- CRUD (Thêm sửa xoá Sự Kiện)
+ + Đếm ngược
+ + Khuyến mãi, FlashSale
+ + Chiến dịch BlackFriday",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+31,,Quản lý Kho Hàng *,"- Quản lý sản phẩm thuộc tính:*
++ Thống kê về sản phẩm
++ Quản lý sản phẩm theo từng loại (biến thể)
++ Xuất danh sách
++ Tìm kiếm
++ Chỉnh sửa",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Có thể làm thêm *,,,,,
+32,,Quản lý Khách Hàng*,"- Xây dựng chức năng quản lý khách hàng*
+ + Xem danh sách khách hàng
+ + Xem thông tin chi tiết (thông tin, lịch sử mua hàng, giao dịch)
+ + Active/deactive tài khoản
+ + Tìm kiếm, lọc tài khoản",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,
+33,,Quản lý User,"- Không được XÓA user
+- Chỉ được chuyển trạng thái (Kích hoạt, Khóa)
+- Khi khóa không thể đăng nhập (đơn hàng đã mua vẫn phải xử lý)
+
+
+
+- Thêm mới tài khoản*
+- Phân quyền tài khoản*
+- Cập nhật tài khoản*
+- Active/ deactive tài khoản*
+- Tìm kiếm tài khoản*
+- Filter tài khoản*",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Yêu cầu bắt buộc,,,,,
+34,Chung,Phân quyền,"- Phân quyền cho :
+ + Khách Hàng (Customers)
+ + Quản trị Viên (Admin)
+ + Nhân viên bán hàng (Staff)
+
+
+- Xây dựng phân quyền Cộng tác viên/nhân viên phụ trách đơn*
+- Khi khách hàng đặt hàng, đơn hàng sẽ chuyển về cho CTV đang có 
+số đơn active ít nhất để chăm sóc khách hàng*",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+35,,Thông báo,"- Xây dựng tính năng gửi thông tin khuyến mãi cho App khách*
+
+- App khách nhận được thông tin khuyến mãi;* 
+
+- Khi bấm vào notification sẽ điều hướng đến trang sản phẩm
+ đang được khuyến mãi *",,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+36,,Chat (Real-time),,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Nâng cao,,,,,
+37,,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,​,,,,,
+38,,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,​,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Thành viên góp ý sửa chức năng vui lòng comment tên,,,,,,,,,,,,,,,,,

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MobileCity | Premium Electronics &amp; Mobile Store</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#181111] dark:text-white transition-colors duration-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Navigation Header -->
+            <header
+                class="flex items-center justify-center border-b border-solid border-neutral-200 dark:border-neutral-800 bg-white dark:bg-background-dark sticky top-0 z-50">
+                <div
+                    class="layout-content-container flex w-full max-w-[1280px] items-center justify-between px-10 py-3">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined text-3xl font-bold">smartphone</span>
+                            <h2
+                                class="text-[#181111] dark:text-white text-2xl font-black leading-tight tracking-[-0.015em]">
+                                MobileCity</h2>
+                        </div>
+                        <label class="flex flex-col min-w-80 h-10">
+                            <div
+                                class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#f4f0f0] dark:bg-neutral-800">
+                                <div class="text-[#896161] dark:text-neutral-400 flex items-center justify-center pl-4">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-[#896161] dark:placeholder:text-neutral-500 px-4 pl-2 text-base font-normal"
+                                    placeholder="Search for gadgets..." value="" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex flex-1 justify-end gap-8 items-center">
+                        <nav class="flex items-center gap-8">
+                            <a class="text-[#181111] dark:text-white text-sm font-semibold hover:text-primary transition-colors"
+                                href="#">Phone</a>
+                            <a class="text-[#181111] dark:text-white text-sm font-semibold hover:text-primary transition-colors"
+                                href="#">Tablet</a>
+                            <a class="text-[#181111] dark:text-white text-sm font-semibold hover:text-primary transition-colors"
+                                href="#">Laptop</a>
+                            <a class="text-[#181111] dark:text-white text-sm font-semibold hover:text-primary transition-colors"
+                                href="#">Accessories</a>
+                        </nav>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white hover:bg-primary/10 transition-colors">
+                                <span class="material-symbols-outlined">person</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white hover:bg-primary/10 transition-colors relative">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="flex flex-col items-center">
+                <div class="layout-content-container flex flex-col max-w-[1280px] w-full flex-1 py-5">
+                    <!-- Hero Section -->
+                    <section class="@container mb-8 px-4">
+                        <div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-center px-12 relative overflow-hidden"
+                            data-alt="Flagship red smartphone display with futuristic lighting"
+                            style='background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQek-7D8-Jptczw3DTXvrlABWEUGG3ML1WTmW0NiHX_iZnwDRBSU0zqkVtOSajPotmXbQ-PuaI-aCTlGoAFzRTzaPPLrBto5P1uJ6PV2_Mbc_iUa8yAyEtd-TNiqaqS7MLzFmyQoY4bnuiQlxan-1RVFsZpmBz0x1pFYSBuZ_CCYd-4FPWmwW8_qSOSldeL8U37DH30m46udUHvW6-FnQEF9_TXKtR6u7GOoNiwoutHWl8t7sqiwNoJ4Oo3_xfTc5DKOR6AzN-XRc");'>
+                            <div class="flex flex-col gap-4 text-left max-w-lg z-10">
+                                <span
+                                    class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full w-fit uppercase tracking-widest">New
+                                    Arrival</span>
+                                <h1
+                                    class="text-white text-5xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl">
+                                    The New Powerhouse <br />iPhone 15 Pro in Red
+                                </h1>
+                                <p class="text-neutral-200 text-lg font-normal leading-relaxed">
+                                    Experience the ultimate technology with striking red accents. Aerospace-grade
+                                    titanium design. The toughest glass in a smartphone.
+                                </p>
+                            </div>
+                            <button
+                                class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:scale-105 transition-transform z-10">
+                                <span>Shop Now</span>
+                            </button>
+                        </div>
+                    </section>
+                    <!-- Flash Sales Section -->
+                    <section class="mb-12 px-4">
+                        <div
+                            class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 mb-6">
+                            <div class="flex items-center gap-4">
+                                <h2
+                                    class="text-[#181111] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] py-5">
+                                    Flash Sales</h2>
+                                <div class="flex gap-2 items-center">
+                                    <div
+                                        class="flex h-10 w-10 items-center justify-center rounded bg-primary text-white font-bold">
+                                        02</div>
+                                    <span class="font-bold text-primary">:</span>
+                                    <div
+                                        class="flex h-10 w-10 items-center justify-center rounded bg-primary text-white font-bold">
+                                        45</div>
+                                    <span class="font-bold text-primary">:</span>
+                                    <div
+                                        class="flex h-10 w-10 items-center justify-center rounded bg-primary text-white font-bold">
+                                        18</div>
+                                </div>
+                            </div>
+                            <a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">View All
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+                            <!-- Sale Product 1 -->
+                            <div class="flex flex-col gap-3 group">
+                                <div
+                                    class="relative w-full aspect-square bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow flex items-center justify-center p-6">
+                                    <div
+                                        class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+                                        -25%</div>
+                                    <div class="w-full h-full bg-center bg-contain bg-no-repeat"
+                                        data-alt="Red wireless noise cancelling headphones"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5jjeJc3ZZAFT8epvro6VqCKds7egA7zKTRsYVxCAFD5BiJDhsTrkboYRVYbJxM_qeoEPbingHZf8yyPXLt5rV5a0_mol8fZJgV0ZGeBmwuTdxN3wZumxzGEhYr-a5Bp_vk-VLbPVJaa8pnz5dlodGkZ1ZSB-1euK1QQS9Eul_S1V8icZ6pNM1m3ZHfCSP9gM9w37kyp-OLJIZTZvNvnWkcPFo86rE-bF_Gra8_v54NMUvc0_HBRy62WdwneWqDYfn3RLL6tOrN8Y");'>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-lg font-bold">Premium Beats Red</p>
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-primary text-lg font-black">$299.00</p>
+                                        <p class="text-[#896161] text-sm line-through">$399.00</p>
+                                    </div>
+                                    <button
+                                        class="mt-3 w-full py-2 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Add
+                                        to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Sale Product 2 -->
+                            <div class="flex flex-col gap-3 group">
+                                <div
+                                    class="relative w-full aspect-square bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow flex items-center justify-center p-6">
+                                    <div
+                                        class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+                                        -15%</div>
+                                    <div class="w-full h-full bg-center bg-contain bg-no-repeat"
+                                        data-alt="Modern red smartwatch with health tracking"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBviS0mFpciWzG2gfxmK16er1EsREcjcHT8ByzscAwk20R_eIIsU43VeZvMQ2e3i-8bmVuHJrXVwAYaKZiIWSggX4BCaNxZyj-MyWFKD9y-M5zwxHwaGuNgaQ6g4JfkgVbeCU4AIPyTZmXWqQXxZKlYCb0ATnbROmHVX8Iy9Wy7SoeDNVHt9hdYpWcir4Ly1qkPHZlPqm0WvrUmV2boLpcPEfwdCMFuYMixmjybJyTi8Rf-ydt8OnxdGL2zAGRzCMQbQTR8oet6Ul8");'>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-lg font-bold">Smart Watch Series 9</p>
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-primary text-lg font-black">$429.00</p>
+                                        <p class="text-[#896161] text-sm line-through">$499.00</p>
+                                    </div>
+                                    <button
+                                        class="mt-3 w-full py-2 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Add
+                                        to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Sale Product 3 -->
+                            <div class="flex flex-col gap-3 group">
+                                <div
+                                    class="relative w-full aspect-square bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow flex items-center justify-center p-6">
+                                    <div
+                                        class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+                                        -10%</div>
+                                    <div class="w-full h-full bg-center bg-contain bg-no-repeat"
+                                        data-alt="Red smartphone back with triple camera"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6APDbChJji_pHdYK08ysCh34P-eIuBodX68DgC5U9yYQpYtVnZv3i0FP72Ib4SEGY4Tw9MJQz6HVJK-b1if8Wes0xZGDyvnc_aIm4q9OEM27dWxba0NjZOrik72ztqG8fso6pmXIXsD-f7teD3nybS3o3t0TkJeDhtkJh_QPTWX_c_QGXSwppf4UPwXHC69QmyTFTW5Hk-D4q7wyEqmFSUP0S5JTBBZN3ujpK5r7-9rYrTEE7n7TjqfNGtT-akBiYMoXKfn44KtE");'>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-lg font-bold">Galaxy Z Red Edition</p>
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-primary text-lg font-black">$899.00</p>
+                                        <p class="text-[#896161] text-sm line-through">$999.00</p>
+                                    </div>
+                                    <button
+                                        class="mt-3 w-full py-2 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Add
+                                        to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Sale Product 4 -->
+                            <div class="flex flex-col gap-3 group">
+                                <div
+                                    class="relative w-full aspect-square bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow flex items-center justify-center p-6">
+                                    <div
+                                        class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+                                        -30%</div>
+                                    <div class="w-full h-full bg-center bg-contain bg-no-repeat"
+                                        data-alt="Compact red bluetooth portable speaker"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAVkur3DwidmV00Vjg0ezZKRsjVxB48tlx3L2VTuZmCIvKkISp2s3VGtqareJ6FdlxUCpm4FJ3zYvS0Fwye2CfbxkJyliaJO0s86h-jaJYnn4LI5iFQwT2tihVFPqo_CyIh9osykj5gmmhWDJy0c_P134udUXFDB78-GyBZ5qZUn_hrMPFc1qHt4ZnoG295dENadGMmih_77ZGKCmsIDiUvu3oCw-c-uVd7ArAIz__CkaIQpQlSG9WRpYJi0aobDaD-7wZZS6yiMc");'>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-lg font-bold">Sonic Bass Portable</p>
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-primary text-lg font-black">$89.00</p>
+                                        <p class="text-[#896161] text-sm line-through">$129.00</p>
+                                    </div>
+                                    <button
+                                        class="mt-3 w-full py-2 bg-[#f4f0f0] dark:bg-neutral-800 text-[#181111] dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Add
+                                        to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Trust Bar -->
+                    <section
+                        class="bg-white dark:bg-neutral-800 rounded-2xl p-8 mb-12 flex justify-between items-center shadow-sm">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary text-4xl">local_shipping</span>
+                            <div>
+                                <p class="font-bold dark:text-white">Free Shipping</p>
+                                <p class="text-sm text-neutral-500">On all orders over $99</p>
+                            </div>
+                        </div>
+                        <div class="h-10 w-[1px] bg-neutral-200 dark:bg-neutral-700"></div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+                            <div>
+                                <p class="font-bold dark:text-white">24/7 Support</p>
+                                <p class="text-sm text-neutral-500">Expert assistance anytime</p>
+                            </div>
+                        </div>
+                        <div class="h-10 w-[1px] bg-neutral-200 dark:bg-neutral-700"></div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+                            <div>
+                                <p class="font-bold dark:text-white">Secure Payment</p>
+                                <p class="text-sm text-neutral-500">100% protected transactions</p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- New Arrivals Grid -->
+                    <section class="mb-12 px-4">
+                        <div
+                            class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 mb-6">
+                            <h2
+                                class="text-[#181111] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] py-5">
+                                New Arrivals</h2>
+                            <a class="text-primary font-bold hover:underline" href="#">Explore More</a>
+                        </div>
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                            <!-- Product 1 -->
+                            <div class="flex flex-col gap-3 group cursor-pointer">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-sm hover:scale-[1.02] transition-transform"
+                                    data-alt="High-end laptop with sleek red body"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_KEP4xM2Y9ko5oi2NvI1j9zEMEG2-14isfu-rO8fZoMwX3AwFyCwWL5v6i9Su-V-sxt4ADaLis-gFy_mB6WvT5e9MiJX7mqj7rF_LhzIzQk_UzxWZ-F2Q-9gTDUKm1B5e9je6gKF5MmjSVz__BZq55Bw_MGLxcuPgdi0PfcdjLq2wq8yRxuYkAgtkZL3u6XlxsFLOHr_u15qDjHvpyBajeDBISgFMrKZq4YrarVJxwt0WMECCfkRFEM02GQfxGENN8zPBxjhx6rI");'>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-base font-semibold leading-normal">
+                                        ZenBook Pro X</p>
+                                    <p class="text-primary text-lg font-black leading-normal">$1,499.00</p>
+                                    <p
+                                        class="text-[#896161] dark:text-neutral-400 text-sm font-medium leading-normal mt-1 flex items-center gap-1">
+                                        Buy Now <span class="material-symbols-outlined text-xs">arrow_forward</span></p>
+                                </div>
+                            </div>
+                            <!-- Product 2 -->
+                            <div class="flex flex-col gap-3 group cursor-pointer">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-sm hover:scale-[1.02] transition-transform"
+                                    data-alt="Powerful red tablet with stylus"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxudYreRBVJPnXuCpN2KyUMd0YljPpbqGk5ElATirLzlUDT7uFbB4kGWmJho80D6OgX-jDqEWgqz3IRLeawgJKfncf_527-jURWNyKTHENLHkUZwt8jlSNu1wYyCDPy1OaRv-zdfTu_hrIKgAUNWCeSA92qb86Krv4QZVCcDyMLj2HrnBszhxU3MBOOWV2C74eBaxAAXkLTmORWGVjcKxy_mNG9CpJAq6-0I-UQA1EBtKD7G7ArZ9-S39INmlWvuz1-rPRGsvLUo0");'>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-base font-semibold leading-normal">
+                                        Tablet Air 12.9</p>
+                                    <p class="text-primary text-lg font-black leading-normal">$749.00</p>
+                                    <p
+                                        class="text-[#896161] dark:text-neutral-400 text-sm font-medium leading-normal mt-1 flex items-center gap-1">
+                                        Buy Now <span class="material-symbols-outlined text-xs">arrow_forward</span></p>
+                                </div>
+                            </div>
+                            <!-- Product 3 -->
+                            <div class="flex flex-col gap-3 group cursor-pointer">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-sm hover:scale-[1.02] transition-transform"
+                                    data-alt="Gaming phone with red LED lighting"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZfMbqarCyf-ya0nZJZDNuSRmxCwny5omD_uigp_KoeRKe6ZjAPsI51lVopvoWh6RRLdEgQjUk6gDtkBQ9UOUrVgsMC3LUf2j0f4YtQKsAJlT08armSzt7Vy7APBFuxBPoYYv24VSwQxAy5ddjspkmDsbXGrzgveCDoC3U_yPUvHKtrcciAe2JYlFlrLeCIw9A3mEajEQ3_f0Q8noAWoyITz_7oynGUWI6vtn2eEg7jFTJtTZv49bOq29LnBagIB_bbux1egoCeDs");'>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-base font-semibold leading-normal">
+                                        Gaming Phone Ultra</p>
+                                    <p class="text-primary text-lg font-black leading-normal">$1,199.00</p>
+                                    <p
+                                        class="text-[#896161] dark:text-neutral-400 text-sm font-medium leading-normal mt-1 flex items-center gap-1">
+                                        Buy Now <span class="material-symbols-outlined text-xs">arrow_forward</span></p>
+                                </div>
+                            </div>
+                            <!-- Product 4 -->
+                            <div class="flex flex-col gap-3 group cursor-pointer">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-sm hover:scale-[1.02] transition-transform"
+                                    data-alt="Wireless earbuds in a red charging case"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWgmnHukzcZyLMvRK3oJyaWi_srzMUHsxLtjbyJ_WYjT0Y8npfyIqQgV5xHZ5IMMolmZCxF6MwHLv07W9zzhotfsipnWFmxU6Zmbyi24U2I2OweRsld3kjjdMXUZVsALXH3PeIeCMcLcA49_PG0G0WSr4Vowp3mbYFBbcWqIxQNBbsFvjHoYGoBuAQML6Y7Shsm4rFm2s_WGU-z7kASQ5wW764-Xf68oov1_yQ4nmmpfT5tiZqzAVJICJHGpmLrmoHVP1jqRfT_gQ");'>
+                                </div>
+                                <div>
+                                    <p class="text-[#181111] dark:text-white text-base font-semibold leading-normal">Red
+                                        Buds Pro</p>
+                                    <p class="text-primary text-lg font-black leading-normal">$159.00</p>
+                                    <p
+                                        class="text-[#896161] dark:text-neutral-400 text-sm font-medium leading-normal mt-1 flex items-center gap-1">
+                                        Buy Now <span class="material-symbols-outlined text-xs">arrow_forward</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Newsletter CTA -->
+                    <section
+                        class="mx-4 my-16 bg-primary rounded-2xl p-12 text-center text-white flex flex-col items-center gap-6">
+                        <h2 class="text-4xl font-black">Stay updated with MobileCity</h2>
+                        <p class="text-lg text-white/90 max-w-xl">Join 50,000+ tech enthusiasts and get exclusive early
+                            access to our flash sales and product launches.</p>
+                        <div class="flex w-full max-w-md gap-2">
+                            <input
+                                class="flex-1 rounded-lg border-none px-4 py-3 text-[#181111] focus:ring-2 focus:ring-white/50"
+                                placeholder="Your email address" type="email" />
+                            <button
+                                class="bg-background-dark px-8 py-3 rounded-lg font-bold hover:bg-neutral-900 transition-colors uppercase tracking-wider text-sm">Subscribe</button>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer
+                class="bg-white dark:bg-background-dark border-t border-neutral-200 dark:border-neutral-800 pt-16 pb-8">
+                <div class="layout-content-container max-w-[1280px] mx-auto px-10">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center gap-2 text-primary">
+                                <span class="material-symbols-outlined text-3xl font-bold">smartphone</span>
+                                <h2 class="text-2xl font-black dark:text-white">MobileCity</h2>
+                            </div>
+                            <p class="text-neutral-500 text-sm leading-relaxed">The world's leading destination for
+                                high-end red-themed electronics and mobile technology. Quality guaranteed since 2015.
+                            </p>
+                            <div class="flex gap-4">
+                                <a class="h-10 w-10 flex items-center justify-center rounded-full bg-[#f4f0f0] dark:bg-neutral-800 text-primary hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span class="material-symbols-outlined">public</span></a>
+                                <a class="h-10 w-10 flex items-center justify-center rounded-full bg-[#f4f0f0] dark:bg-neutral-800 text-primary hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+                                <a class="h-10 w-10 flex items-center justify-center rounded-full bg-[#f4f0f0] dark:bg-neutral-800 text-primary hover:bg-primary hover:text-white transition-all"
+                                    href="#"><span class="material-symbols-outlined">share</span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#181111] dark:text-white mb-6 uppercase tracking-wider text-xs">
+                                Categories</h4>
+                            <ul class="flex flex-col gap-4 text-neutral-500 text-sm">
+                                <li><a class="hover:text-primary transition-colors" href="#">Smartphones</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Tablets &amp; iPads</a>
+                                </li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Laptops &amp; PCs</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Wearables</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Audio Devices</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#181111] dark:text-white mb-6 uppercase tracking-wider text-xs">
+                                Help &amp; Support</h4>
+                            <ul class="flex flex-col gap-4 text-neutral-500 text-sm">
+                                <li><a class="hover:text-primary transition-colors" href="#">Shipping Policy</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Return &amp; Refunds</a>
+                                </li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Track Your Order</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">FAQs</a></li>
+                                <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#181111] dark:text-white mb-6 uppercase tracking-wider text-xs">
+                                Contact Us</h4>
+                            <ul class="flex flex-col gap-4 text-neutral-500 text-sm">
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-sm">location_on</span> 123 Tech Avenue,
+                                    Silicon Valley</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-sm">phone</span> +1 (555) 000-1234</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-sm">mail</span> hello@mobilecity.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-neutral-200 dark:border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-neutral-500 text-xs">© 2023 MobileCity Electronics. All rights reserved.</p>
+                        <div class="flex gap-4">
+                            <span class="material-symbols-outlined text-neutral-400 text-3xl">credit_card</span>
+                            <span
+                                class="material-symbols-outlined text-neutral-400 text-3xl">account_balance_wallet</span>
+                            <span class="material-symbols-outlined text-neutral-400 text-3xl">token</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
