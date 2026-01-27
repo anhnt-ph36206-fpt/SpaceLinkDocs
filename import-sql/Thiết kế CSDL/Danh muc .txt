@@ -1,0 +1,65 @@
+Danh muc 
+- id
+- category_name
+
+
+San Pham
+-id
+-product_name
+-product_price
+-product_sale
+-product_image
+-product_quantity
+-product_view
+-product_entry
+-product_description
+-product_status
+-(category_id)
+
+Hinh Anh San Pham
+- id
+- product_id
+- link_image
+
+
+
+Don hang
+-id
+-order_id
+-user_id
+-recipient_name
+-recipient_email
+-recipient_phone
+
+
+        + Chi Tiet Don Hang
+	+ Trang Thai Don Hang
+
+Gio Hang\
+	+ Chi Tiet Gio Hang
+
+Tai Khoan
+-id
+-name
+-avatar
+-date_of_birth
+-email
+-address
+-phone
+-password
+-(role_id)
+-status
+
+
+Binh Luan
+
+Chuc Vu
+
+Phuong Thuc Thanh Toan
+
+
+
+
+
+
+

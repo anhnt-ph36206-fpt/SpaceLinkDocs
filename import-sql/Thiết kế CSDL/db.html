@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERD Table Users</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            background: #4472C4;
+            color: white;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .table-content {
+            border: 1px solid #ddd;
+        }
+
+        .column-headers {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr;
+            background: #D9E2F3;
+            font-weight: bold;
+            font-size: 12px;
+            border-bottom: 2px solid #4472C4;
+        }
+
+        .column-headers>div {
+            padding: 10px 12px;
+            border-right: 1px solid #ccc;
+        }
+
+        .column-headers>div:last-child {
+            border-right: none;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 12px;
+        }
+
+        .table-row:nth-child(even) {
+            background: #F8F9FA;
+        }
+
+        .table-row:nth-child(odd) {
+            background: white;
+        }
+
+        .table-row>div {
+            padding: 10px 12px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .table-row>div:last-child {
+            border-right: none;
+        }
+
+        .pk {
+            font-weight: bold;
+        }
+
+        .constraint {
+            font-weight: 600;
+            color: #d63384;
+        }
+
+        .note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+        }
+
+        .note h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .note ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .note li {
+            margin: 8px 0;
+            color: #856404;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-header">
+            🗂️ users
+        </div>
+        <div class="table-content">
+            <div class="column-headers">
+                <div>Column</div>
+                <div>Type</div>
+                <div>Constraint</div>
+            </div>
+
+            <div class="table-row">
+                <div class="pk">🔑 id</div>
+                <div>BIGINT</div>
+                <div class="constraint">PK</div>
+            </div>
+
+            <div class="table-row">
+                <div>email</div>
+                <div>VARCHAR(255)</div>
+                <div class="constraint">NN</div>
+            </div>
+
+            <div class="table-row">
+                <div>password</div>
+                <div>VARCHAR(255)</div>
+                <div class="constraint">NN</div>
+            </div>
+
+            <div class="table-row">
+                <div>fullname</div>
+                <div>VARCHAR(150)</div>
+                <div class="constraint">NN</div>
+            </div>
+
+            <div class="table-row">
+                <div>phone</div>
+                <div>VARCHAR(15)</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>avatar</div>
+                <div>VARCHAR(255)</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>date_of_birth</div>
+                <div>DATE</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>📋 gender</div>
+                <div>ENUM</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>email_verified_at</div>
+                <div>TIMESTAMP</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>📋 status</div>
+                <div>ENUM</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>remember_token</div>
+                <div>VARCHAR(100)</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>last_login_at</div>
+                <div>TIMESTAMP</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>📋 created_at</div>
+                <div>TIMESTAMP</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>📋 updated_at</div>
+                <div>TIMESTAMP</div>
+                <div></div>
+            </div>
+
+            <div class="table-row">
+                <div>📋 deleted_at</div>
+                <div>TIMESTAMP</div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container note">
+        <h3>📌 Hướng dẫn vẽ trong Draw.io</h3>
+        <ol>
+            <li>Mở Draw.io → chọn <code>Arrange</code> → <code>Insert</code> → <code>Advanced</code> →
+                <code>Table</code></li>
+            <li>Tạo bảng với <strong>3 cột</strong> và <strong>16 hàng</strong></li>
+            <li>Hàng đầu tiên: gộp 3 cột, điền "users 🗂️", tô màu nền <code>#4472C4</code>, chữ màu trắng</li>
+            <li>Hàng thứ 2: điền "Column | Type | Constraint", tô màu nền <code>#D9E2F3</code></li>
+            <li>Các hàng còn lại: copy nội dung từ bảng phía trên</li>
+            <li>Đổi màu nền các hàng: xen kẽ trắng và <code>#F8F9FA</code></li>
+            <li>Biểu tượng: 🔑 = Primary Key, 📋 = có Foreign Key hoặc đặc biệt</li>
+        </ol>
+        <p><strong>Lưu ý:</strong> PK = Primary Key, NN = Not Null, ENUM = Enumeration</p>
+    </div>
+</body>
+
+</html>
