@@ -16,13 +16,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('brand_id')->constrained()->onDelete('cascade');
-            // $table->foreignId('category_id')->constrained();
-            
+            // $table->foreignId('category_id')->constrained('categories')->restrictOnDelete();
+            // $table->foreignId('brand_id')->constrained('brands')->restrictOnDelete();
             $table->string('name', 200);
             $table->string('slug', 200)->unique();
-            // $table->string('sku', 50)->unique();
-            $table->string('sku')->default('');        // default chuỗi rỗng
+            $table->string('sku')->default('');
             $table->decimal('price', 15, 2);
             $table->decimal('sale_price', 15, 2)->nullable();
             $table->integer('stock_quantity')->default(0);
